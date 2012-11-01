@@ -47,12 +47,9 @@ class BomDia(callbacks.PluginRegexp):
         #excl = random.sample("!"*10+"1"*4, random.randint(1, 6))       
         irc.reply("bom dia!")
 
-    def bom(self, irc, msg, args, channel):
-        """
-        Clears the players list
-        """
+    def bom(self, irc, msg, args, text):
         irc.reply("bom dia!")
-    bom = wrap(bom, ["channel"])
+    bom = wrap(bom, [additional("text")])
 
 Class = BomDia
 
